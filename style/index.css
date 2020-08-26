@@ -620,10 +620,10 @@ button { cursor: pointer;}
 	height: 100%;
 	z-index: 1;
 }
-.page_3_pic { background: url(../images/page3&4_bg.png) no-repeat center/contain; }
-.page_3_pic:before { background: url(../images/page3&4_computer.png) no-repeat center/contain; }
+.page_3_pic { background: url(../images/page3_4_bg.png) no-repeat center/contain; }
+.page_3_pic:before { background: url(../images/page3_4_computer.png) no-repeat center/contain; }
 .page_3_pic:after { 
-	background: url(../images/page3&4_safe.png) no-repeat center/contain;
+	background: url(../images/page3_4_safe.png) no-repeat center/contain;
 	animation: jump .8s infinite;
 }
 @keyframes jump {
