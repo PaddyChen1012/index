@@ -28,6 +28,19 @@
 			}
 		});
 	});
+	window.onload = function(){
+		var counter = 1;
+		var hm1 = document.getElementById("hm_1");
+		setInterval(pageSwitch, 4000);
+		function pageSwitch(){
+			hm1.classList.remove("warp_" + counter);
+			counter++;
+			if(counter == 5){
+				counter = 1;
+			}
+			hm1.classList.add("warp_" + counter);
+		}
+	}
 	</script>
 </head>
 <body ontouchstart="" onmouseover="">
@@ -59,7 +72,7 @@
 	</div>
 
 	<!-- class加 warp_1 / warp_2 / warp_3 / warp_4  -->
-	<div id="hm_1" class="page_1 warp_1">
+	<div id="hm_1" class="page_1">
 		<div class="warp_page_1">
 			<span class="word_box">
 				<h2>體育賽事</h2>
