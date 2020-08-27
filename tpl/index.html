@@ -9,11 +9,65 @@
 	<link href="../style/index.css?<?php echo IMAGES_VER; ?>" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&amp;display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+	<script type="text/javascript">
+	var scroll = $(window).scroll(function(){
+		for(var i = 1;i<5;i++){
+			if(scroll.scrollTop()> $(`#hm_${i}`).offset().top + $(`#hm_${i}`).height()/4){
+				$(`#hm_${i+1}`).addClass('active')
+			}
+		}
+	});
+	$(function() {
+		$(window).scroll(function() {
+			var scroll = $(window).scrollTop();
+			if (scroll >= 1) {
+				$("#title_moving").addClass("moving");
+			} else {
+				$("#title_moving").removeClass("moving");
+			}
+		});
+	});
+	function warp_2(){
+		$("#hm_1").removeClass("warp_1 warp_3 warp_4").addClass("warp_2");
+	}
+	function warp_3(){
+		$("#hm_1").removeClass("warp_1 warp_2 warp_4").addClass("warp_3");
+	}
+	function warp_4(){
+		$("#hm_1").removeClass("warp_1 warp_2 warp_3").addClass("warp_4");
+	}
+	function warp_1(){
+		$("#hm_1").removeClass("warp_2 warp_3 warp_4").addClass("warp_1");
+	}
+	var count=0;
+	function autochange() {
+		if (count==0) {
+			warp_2();
+		}
+		if (count==1) {
+			warp_3();
+		}
+		if (count==2) {
+			warp_4();
+		}
+		if (count==3) {
+			warp_1();
+		}
+		count=count+1;
+		if (count>3) {
+			count=0;
+		}
+	}
+	$(window).load(function() {
+		setInterval("autochange()",300);
+	});
+	</script>
 </head>
-<body>
+<body ontouchstart="" onmouseover="">
 
 	<!-- 滑動時class加moving -->
-	<div class="title" style="display: ;">
+	<div id="title_moving" class="title" style="display: ;">
 		<div class="logo_box">
 			<i class="logo_pic"></i>
 		</div>
@@ -39,7 +93,7 @@
 	</div>
 
 	<!-- class加 warp_1 / warp_2 / warp_3 / warp_4  -->
-	<div class="page_1 warp_1">
+	<div id="hm_1" class="page_1 warp_1">
 		<div class="warp_page_1">
 			<span class="word_box">
 				<h2>體育賽事</h2>
@@ -95,12 +149,12 @@
 
 
 	<!-- 滾動到此頁 class 加active -->
-	<div class="page_2 active">
+	<div id="hm_2" class="page_2 ">
 		<div class="page_2_top">
 			<span class="word_box2">
 				<h2>PRODUCT</h2>
 				<h4>產品服務</h4>
-				<tt>ROYAL Gaming 提供全面的一站式服務，不論在產品質量、服務管理以及技術支援，我們的專業團隊及技術人員都會為客人提供滿意及稱心之服務。</tt>
+				<tt>提供全面的一站式服務，不論在產品質量、服務管理以及技術支援，我們的專業團隊及技術人員都會為客人提供滿意及稱心之服務。</tt>
 			</span>
 			<div class="page2_pic_box"></div>
 		</div>
@@ -121,13 +175,13 @@
 		<div class="page_3_pic"></div>
 
 		<!-- 滾動到此頁 class 加active -->
-		<div class="page_3 active">
+		<div id="hm_3" class="page_3">
 			<div class="page_3_top">
 				<span class="word_box2">
 					<i class="smail_chip"></i>
 					<h2>SERVICE</h2>
 					<h4>服務項目與流程</h4>
-					<tt>ROYAL Gaming 提供全面的一站式服務，不論在產品質量、服務管理以及技術支援，我們的專業團隊及技術人員都會為客人提供滿意及稱心之服務。</tt>
+					<tt>提供全面的一站式服務，不論在產品質量、服務管理以及技術支援，我們的專業團隊及技術人員都會為客人提供滿意及稱心之服務。</tt>
 				</span>
 			</div>
 			<div class="page_3_bottom">
@@ -149,7 +203,7 @@
 		</div>
 
 		<!-- 滾動到此頁 class 加active -->
-		<div class="page_4 active">
+		<div id="hm_4" class="page_4">
 			<div class="page4_top">
 				<span class="word_box2">
 					<h2>PARTNER</h2>
@@ -208,7 +262,7 @@
 	</div>
 
 	<!-- 滾動到此頁 class 加active -->
-	<div class="page_5 active">
+	<div id="hm_5" class="page_5">
 		<div class="page_5_top">
 			<span><tt>CONTACT &emsp; US</tt></span>
 		</div>
